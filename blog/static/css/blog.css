@@ -1,0 +1,107 @@
+/* Stiluri pentru header */
+.header {
+    background-color: #BB9CC0;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Stiluri pentru titlul din header */
+.header h1 {
+    margin: 0;
+    font-size: 32px;
+}
+
+/* Stiluri pentru content */
+#content {
+    width: 70%;
+    float: right;
+    text-align: center; /* Am corectat aici pentru a alinia textul la centru */
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Stiluri pentru titlurile din content */
+#content h2 {
+    margin-top: 0;
+    font-size: 24px;
+    color: #BB9CC0;
+}
+
+/* Stiluri pentru data publicării */
+#content .date {
+    font-style: italic;
+    color: #888;
+}
+
+/* Stiluri pentru textul din content */
+#content p {
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+#content a{
+    text-decoration: none;
+    color: #BB9CC0;
+}
+
+#content a:hover{
+    color: #67729D;
+}
+
+/* Stiluri pentru sidebar */
+#sidebar {
+    width: 30%;
+    float: left;
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+/* Stiluri pentru titlurile din sidebar */
+#sidebar h2 {
+    margin-top: 0;
+    font-size: 20px;
+    color: #67729D;
+}
+
+/* Stiluri pentru imaginea din sidebar */
+#sidebar img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 15px;
+}
+
+/* Stiluri pentru paragraful din sidebar */
+#sidebar p {
+    color: #666;
+}
+
+/* Stiluri pentru footer */
+.footer {
+    clear: both;
+    text-align: center;
+    background-color: #BB9CC0;
+    color: #fff;
+    padding: 10px;
+}
+
+/* Stiluri pentru textul din footer */
+.footer p {
+    margin: 0;
+    font-size: 14px;
+}
+
+/* Adaugă aceste stiluri pentru butonul Submit */
+.comment-form .btn-primary {
+    background-color: #BB9CC0; /* Culoarea de fundal inițială */
+    border-color: #BB9CC0; /* Culoarea chenarului butonului */
+}
+
+.comment-form .btn-primary:hover {
+    background-color: #67729D; /* Culoarea de fundal la hover */
+    border-color: #67729D; /* Culoarea chenarului butonului la hover */
+}
+
+

@@ -1,0 +1,54 @@
+{% extends "blog/base.html" %}
+{% block title %}{{ post.title }}{% endblock %}
+{% block content %}
+{% load static %}
+<link href="{% static 'css/blog.css' %}" rel="stylesheet" type="text/css" />
+    <div class="container">
+        <h1>{{ post.title }}</h1>
+        <p class="date">Published {{ post.publish }} by {{ post.author }}</p>
+        <div class="row">
+            <div class="col-md-12">
+                {{ post.body|linebreaks }}
+
+                {% with comments.count as total_comments %}
+                    <h2>{{ total_comments }} comment{{ total_comments|pluralize }}</h2>
+                {% endwith %}
+
+                {% for comment in comments %}
+                    <div class="comment">
+                        <p class="info">
+                            Comment {{ forloop.counter }} by {{ comment.name }}
+                            {{ comment.created }}
+                        </p>
+                        {{ comment.body|linebreaks }}
+                    </div>
+                {% empty %}
+                    <p>There are no comments yet.</p>
+                {% endfor %}
+
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#commentModal">
+                    Add a Comment
+                </button>
+
+                <!-- Formular pt comentariu -->
+                <div class="modal fade" id="commentModal" tabindex="-1" aria-labelledby="commentModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="commentModalLabel">Add a Comment</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <form method="post" class="comment-form">
+                                    {% csrf_token %}
+                                    {{ comment_form.as_p }}
+                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
